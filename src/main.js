@@ -1,21 +1,12 @@
-// main.js
-const { createRoot } = ReactDOM;
+import React from 'react';
+import ReactDOM from 'react-dom/client';   // 👈 for React 18
 
-// Example CartContext (replace with your real logic later if needed)
-const CartContext = React.createContext();
-const CartProvider = ({ children }) => {
-  return React.createElement(CartContext.Provider, { value: {} }, children);
-};
+import App from './App';
 
-// Example App component (replace with your real App content)
-function App() {
-  return React.createElement("h1", null, "Hello React 🚀 GitHub Pages is working!");
-}
-
-// Render into root
-const root = createRoot(document.getElementById("root"));
+// React 18 way
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  React.createElement(CartProvider, null,
-    React.createElement(App, null)
-  )
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
